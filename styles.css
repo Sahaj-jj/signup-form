@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.main {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+.image-container {
+    width: 25%;
+    height: inherit;
+    background-image: url("images/sidebar-img.jpg");
+    background-size: cover;
+}
+
+.content-container {
+    width: 75%;
+    background-color: yellow;
+}
+
+.form-container {
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 0px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px;
+}
