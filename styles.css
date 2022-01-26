@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
+
+:root {
+    --body: #E54F53;
+    --background: #eeeeeef5;
+    --orange: #E54F53;
+    --form-background: #f0f0f098;
+    --input-background: var(--form-background);
+    --text: rgb(5, 5, 5);
+    --error: rgb(197, 0, 0);
+    --shadow: rgb(211, 211, 211);
+}
 
 * {
     margin: 0;
@@ -7,41 +20,201 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    background-color: var(--body);
 }
 
 .main {
     display: flex;
-    width: 80%;
+    width: 70%;
     height: 80vh;
     margin: auto;
     margin-top: 10vh;
+    box-shadow: 2px 5px 5px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 }
 
+/* Image */
+
 .image-container {
-    width: 25%;
+    position: relative;
+    width: 35%;
     height: inherit;
     background-image: url("images/sidebar-img.jpg");
     background-size: cover;
+    border-radius: 15px 0 0 15px;
+    z-index: 1;
+    transition: all 1s;
 }
 
+.title-container {
+    width: 100%;
+    text-align: center;
+    color: var(--orange);
+    margin-top: 20%;
+    background-image: linear-gradient(0deg, #00000015, transparent, #00000015);
+}
+
+.title {
+    font-family: 'Arizonia', cursive;
+    color: white;
+    font-size: 3rem;
+    padding: 20px 0;
+    transition: all 2s;
+}
+
+.title:hover {
+    transform: scale(1.2);
+}
+
+.credit {
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 5px;
+    left: 0;   
+    width: 100%; 
+    text-align: center;
+    color: grey;
+}
+
+/* Content */
+
 .content-container {
-    width: 75%;
-    background-color: yellow;
+    position: relative;
+    width: 65%;
+    background-color: var(--background);
+    color: var(--text);
+    border-radius: 0 15px 15px 0;
+}
+
+header {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.heading {
+    margin: 60px 0 40px;
+    line-height: 28px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.sec {
+    color: var(--orange);
+    font-weight: bolder;
+}
+
+/* Form */
+
+.form-heading {
+    color: white;
+    width: fit-content;
+    margin: 20px 0 0px 60px;
+    padding: 5px 20px;
+    color: rgb(52, 52, 88);
+    opacity: 60%;
 }
 
 .form-container {
-    background-color: red;
+    background-color: var(--form-background);
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 10px 0px;
+    padding: 20px 0px;
     margin: 0 auto;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    box-shadow: -2px 2px 5px var(--shadow);
 }
 
 .input-container {
     display: flex;
     flex-direction: column;
-    padding: 0 100px;
+    margin-left: 70px;
+    margin-top: 5px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: rgba(49, 49, 49, 0.63);
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 600;
+}
+
+input {
+    width: 200px;
+    padding: 4px 8px;
+    outline: none;
+    border: 1px solid #8f8f8f44;
+    box-sizing: border-box;
+    background-color: var(--input-background);
+    border-radius: 5px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--input-background) inset !important;
+    -webkit-text-fill-color: var(--text) !important;
+}
+
+input:focus {
+    border-color: rgb(0, 102, 255);
+}
+
+input.error:not(:focus) {
+    border-color: var(--error);
+}
+
+.error-msg {
+    font-size: 0.7rem;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--error);
+}
+
+input.error + .error-msg {
+    opacity: 1;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.submit {
+    cursor: pointer;
+    margin: 30px 70px 0;
+    padding: 10px 30px;
+    color: white;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px var(--shadow);
+    font-weight: bolder;
+    transition: all 0.2s;
+}
+
+.submit:active {
+    transform: scale(0.9);
+}
+
+.login {
+    color: rgb(22, 22, 22);
+    font-size: 0.9rem;
+    margin: 20px 70px;
+}
+
+a {
+    margin-left: 2px;
+    text-decoration: none;
+    color: var(--orange);
+    font-weight: bolder;
+}
+
+.tnc {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 0.7rem;
 }
